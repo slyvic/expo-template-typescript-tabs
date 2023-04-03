@@ -9,9 +9,8 @@
     "web": "expo start --web",
     "eject": "expo eject",
     "test": "jest --watchAll",
-    "set_git_credentials": "git config user.name VectralsSoftware && git config user.email vectralsinc@gmail.com",
-    "testing_deploy": "npm run set_git_credentials && git push origin testing",
-    "production_deploy": "npm run set_git_credentials && git push origin main"
+    "set_git_credentials": "git config user.name TeCambio && git config user.email tecambioapp@gmail.com",
+    "apk_build": "eas build -p android --profile preview"
   },
   "jest": {
     "preset": "jest-expo"
@@ -21,6 +20,8 @@
     "@react-navigation/bottom-tabs": "^6.0.5",
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/native-stack": "^6.1.0",
+    "@types/react": "~18.0.27",
+    "axios": "^1.3.4",
     "expo": "^48.0.9",
     "expo-asset": "~8.9.1",
     "expo-constants": "~14.2.1",
@@ -28,15 +29,21 @@
     "expo-linking": "~4.0.1",
     "expo-splash-screen": "~0.18.1",
     "expo-status-bar": "~1.4.4",
+    "expo-updates": "~0.16.3",
     "expo-web-browser": "~12.1.1",
+    "jest": "^29.2.1",
+    "metro-config": "^0.76.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-native": "0.71.4",
     "react-native-safe-area-context": "4.5.0",
     "react-native-screens": "~3.20.0",
     "react-native-web": "~0.18.10",
-    "@types/react": "~18.0.27",
-    "jest": "^29.2.1",
+    "react-native-webview": "11.26.0",
+    "react-redux": "^8.0.5",
+    "redux": "^4.2.1",
+    "redux-devtools-extension": "^2.13.9",
+    "redux-thunk": "^2.4.2",
     "typescript": "^4.9.4"
   },
   "devDependencies": {

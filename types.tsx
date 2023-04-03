@@ -24,9 +24,10 @@ export type RootStackScreenProps<Screen extends keyof RootStackParamList> = Nati
   Screen
 >;
 
+// Bottom navbar tabs
 export type RootTabParamList = {
-  TabOne: undefined;
-  TabTwo: undefined;
+  Conversor: undefined;
+  Support: undefined;
 };
 
 export type RootTabScreenProps<Screen extends keyof RootTabParamList> = CompositeScreenProps<

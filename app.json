@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "vectrals-app-template",
-    "slug": "vectrals-app-template",
+    "name": "TeCambio",
+    "slug": "tecambio",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/images/icon.png",
@@ -9,26 +9,43 @@
     "userInterfaceStyle": "automatic",
     "splash": {
       "image": "./assets/images/splash.png",
-      "resizeMode": "contain",
+      "resizeMode": "cover",
       "backgroundColor": "#ffffff"
     },
     "updates": {
+      "enabled": true,
+      "checkAutomatically": "ON_LOAD",
       "fallbackToCacheTimeout": 0
     },
+    "plugins": [
+      [
+        "expo-updates",
+        {
+          "username": "vectrals"
+        }
+      ]
+    ],
     "assetBundlePatterns": [
       "**/*"
     ],
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.tecambio.app"
     },
     "android": {
+      "package": "com.tecambio.app",
+      "versionCode": 1,
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/adaptive-icon.png"
       }
     },
     "web": {
       "favicon": "./assets/images/favicon.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "dc7189f7-6470-4193-9ca3-4ac208673c4b"
+      }
     }
   }
 }

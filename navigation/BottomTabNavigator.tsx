@@ -3,9 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { RootTabParamList, RootTabScreenProps } from '../types';
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-import TabOneScreen from '../screens/TabOneScreen';
-import TabTwoScreen from '../screens/TabTwoScreen';
-import { Pressable } from 'react-native';
+import Conversor from '../screens/Conversor';
+import Support from '../screens/Support';
+import { Alert, Pressable } from 'react-native';
 /**
  * A bottom tab navigator displays tab buttons on the bottom of the display to switch screens.
  * https://reactnavigation.org/docs/bottom-tab-navigator
@@ -17,26 +17,32 @@ const BottomTabNavigator = () => {
 
   return (
     <BottomTab.Navigator
-      initialRouteName="TabOne"
+      initialRouteName="Conversor"
       screenOptions={{
-        tabBarActiveTintColor: Colors[colorScheme].tint,
+        tabBarActiveTintColor: Colors[colorScheme].white,
+        tabBarHideOnKeyboard: true
       }}>
       <BottomTab.Screen
-        name="TabOne"
-        component={TabOneScreen}
-        options={({ navigation }: RootTabScreenProps<'TabOne'>) => ({
-          title: 'Tab One',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+        name="Conversor"
+        component={Conversor}
+        options={({ navigation }: RootTabScreenProps<'Conversor'>) => ({
+          title: 'Conversor',
+          tabBarIcon: ({ color }) => <TabBarIcon name="refresh" color={color} />,
           headerRight: () => (
             <Pressable
-              onPress={() => navigation.navigate('Modal')}
+              onPress={() => Alert.alert('Cómo funciona?', 'Simplemente ingresá el valor en la moneda que quieras y nosotros automáticamente lo convertiremos en tiempo real, así de fácil! 😄', [
+                {
+                  text: 'Entendido',
+                  style: 'cancel',
+                },
+              ])}
               style={({ pressed }) => ({
                 opacity: pressed ? 0.5 : 1,
               })}>
               <FontAwesome
                 name="info-circle"
                 size={25}
-                color={Colors[colorScheme].text}
+                color={Colors[colorScheme].white}
                 style={{ marginRight: 15 }}
               />
             </Pressable>
@@ -44,11 +50,11 @@ const BottomTabNavigator = () => {
         })}
       />
       <BottomTab.Screen
-        name="TabTwo"
-        component={TabTwoScreen}
+        name="Support"
+        component={Support}
         options={{
-          title: 'Tab Two',
-          tabBarIcon: ({ color }) => <TabBarIcon name="code" color={color} />,
+          title: 'Soporte',
+          tabBarIcon: ({ color }) => <TabBarIcon name="support" color={color} />,
         }}
       />
     </BottomTab.Navigator>
